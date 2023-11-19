@@ -17,7 +17,7 @@ header h4 {
 /* body */
 .main-body-container {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 350px 1fr;
   column-gap: 5px;
   padding: 5px 5px;
   height: 530px;
@@ -32,27 +32,21 @@ header h4 {
   display: inline-block;
   text-align: center;
 }
-.total-item {
-  background-color: blueviolet;
-  height: 75px;
-}
-.item-in-troll-container {
-  background-color: beige;
-  height: 350px;
-}
 .first-row-of-first-column-of-main {
+  vertical-align: middle;
   text-align: center;
   margin-bottom: 5px;
 }
 .select-input form, select {
   color: white;
   background-color: #00a1ec;
-  width: 380px;
+  width: 345px;
   height: 36px;
   text-align: center;
   font-weight: bold;
 }
 .second-row-of-first-column-of-main {
+  vertical-align: middle;
   text-align: center;
   margin-bottom: 5px;
   /* width: 380px;
@@ -63,15 +57,16 @@ header h4 {
 .mamang-samele-container {
   vertical-align: middle;
   text-align: center;
-  width: 380px;
+  width: 345px;
   height: 36px;
   display: inline-block;
   background-color: #00a1ec;
 }
 .mamang-samele-container p {
-  color: white;
-  vertical-align: middle;
+  line-height: 36px;
   display: inline-block;
+  vertical-align: middle;
+  color: white;
   text-align: center;
   font-weight: bold;
 }
@@ -79,25 +74,62 @@ header h4 {
   vertical-align: middle;
   border-radius: 150px;
   display: inline-block;
-  height: 34px;
+  height: 30px;
 }
+.item-in-troll-container {
+  vertical-align: middle;
+  overflow-y: scroll;
+  background-color: #f5f5f5;
+  border: 1px solid darkgray;
+  height: 355px;
+  margin-bottom: 5px;
+}
+.total-item {
+  padding: 1.5px 1.5px;
+  vertical-align: middle;
+  background-color: white;
+  height: 75px;
+}
+.total-item p {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+}
+.total-item .dynamic-text {
+  padding-left: 5px;
+  width: 150px;
+}
+.third-row-of-total-item {
+  background-color: #049eec;
+}
+.third-row-of-total-item p {
+  color: white;
+}
+
 /* second column of main body */
 .second-column-of-main {
   padding: 2px 2px;
 }
 .item-div-container {
   vertical-align: middle;
-  padding: 5px 5px;
   background-color: white;
-  height: 35px;
+  height: 36px;
+  margin-bottom: 5px;
 }
 .item-div-container p {
+  padding-right: 830px;
+  line-height: 36px;
+  padding-left: 10px;
+  padding: right;
+  vertical-align: middle;
   display: inline-block;
   font-weight: bold;
 }
 .item-div-container img {
-  vertical-align: middle;
+  margin: 0px 0px;
 }
-.item-list-text {
-  padding-right: 800px;
+.food-menu-container {
+  width: 100%;
+  height: 475px;
+  border: 1px solid darkgray;
 }
