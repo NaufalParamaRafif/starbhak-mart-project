@@ -1,0 +1,103 @@
+p, h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* header */
+header {
+  background-color: #0071ba;
+  padding: 10px 10px;
+}
+header h4 {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  color: white;
+}
+/* body */
+.main-body-container {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  column-gap: 5px;
+  padding: 5px 5px;
+  height: 530px;
+  background-color: whitesmoke;
+}
+/* first column of main body */
+.first-column-of-main {
+  padding: 2px 2px;
+}
+.select-input {
+  /* width: 100%; */
+  display: inline-block;
+  text-align: center;
+}
+.total-item {
+  background-color: blueviolet;
+  height: 75px;
+}
+.item-in-troll-container {
+  background-color: beige;
+  height: 350px;
+}
+.first-row-of-first-column-of-main {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.select-input form, select {
+  color: white;
+  background-color: #00a1ec;
+  width: 380px;
+  height: 36px;
+  text-align: center;
+  font-weight: bold;
+}
+.second-row-of-first-column-of-main {
+  text-align: center;
+  margin-bottom: 5px;
+  /* width: 380px;
+  height: 36px;
+  text-align: center;
+  font-weight: bold; */
+}
+.mamang-samele-container {
+  vertical-align: middle;
+  text-align: center;
+  width: 380px;
+  height: 36px;
+  display: inline-block;
+  background-color: #00a1ec;
+}
+.mamang-samele-container p {
+  color: white;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+.mamang-samele-container img {
+  vertical-align: middle;
+  border-radius: 150px;
+  display: inline-block;
+  height: 34px;
+}
+/* second column of main body */
+.second-column-of-main {
+  padding: 2px 2px;
+}
+.item-div-container {
+  vertical-align: middle;
+  padding: 5px 5px;
+  background-color: white;
+  height: 35px;
+}
+.item-div-container p {
+  display: inline-block;
+  font-weight: bold;
+}
+.item-div-container img {
+  vertical-align: middle;
+}
+.item-list-text {
+  padding-right: 800px;
+}
