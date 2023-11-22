@@ -28,7 +28,6 @@ header h4 {
   padding: 2px 2px;
 }
 .select-input {
-  /* width: 100%; */
   display: inline-block;
   text-align: center;
 }
@@ -49,10 +48,6 @@ header h4 {
   vertical-align: middle;
   text-align: center;
   margin-bottom: 5px;
-  /* width: 380px;
-  height: 36px;
-  text-align: center;
-  font-weight: bold; */
 }
 .mamang-samele-container {
   vertical-align: middle;
@@ -84,6 +79,26 @@ header h4 {
   height: 355px;
   margin-bottom: 5px;
 }
+.item-in-troll {
+  padding-left: 2px;
+  border: 1px solid black;
+  display: grid;
+  gap: 5px;
+}
+.item-in-troll-image {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+}
+.item-in-troll img {
+  height: 45px;
+}
+.item-in-troll .right {
+  float: right;
+}
+
+
 .total-item {
   padding: 1.5px 1.5px;
   vertical-align: middle;
@@ -144,7 +159,7 @@ header h4 {
   background-color: #0071ba;
   padding: 0px 0px;
 }
-.one-menu img{
+.menu img{
   width: 100%;
 }
 /* footer */
