@@ -1,3 +1,7 @@
+svg:hover {
+  cursor: pointer;
+  
+}
 p, h4 {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -91,8 +95,9 @@ header h4 {
   display: grid;
   place-items: center;
 }
-.item-in-troll img {
-  height: 45px;
+.item-in-troll-image svg:hover path {
+  cursor: pointer;
+  fill: red;
 }
 .item-in-troll .right {
   float: right;

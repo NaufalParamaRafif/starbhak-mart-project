@@ -1,15 +1,18 @@
 $(document).ready(function(){
+  MenuClicked();
+  deleteItem();
+});
+
+function MenuClicked(){
   $(".menu").click(function(){
     
     nameFood = $("h5", this).text();
-    unitPrice = $("h6", this).text();
+    unitPrice = convertRupiahToFloat($("h6", this).text());
 
     if ($("."+nameFood+"").length) {
       quantity = parseInt($("."+nameFood+" .quantity span").text());
-      totalPrice = parseFloat(convertRupiahToInt($("."+nameFood+" .total-price span").text()));
-      unitPrice = parseFloat(convertRupiahToInt($("."+nameFood+".unit-price span").text()));
       quantity++;
-      totalPrice += unitPrice;
+      totalPrice = quantity * unitPrice;
 
       $("."+nameFood+" .quantity span").text(quantity);
       $("."+nameFood+" .total-price span").text(totalPrice);
@@ -19,18 +22,57 @@ $(document).ready(function(){
           '<p class="name-of-food">'+nameFood+'</p>' +
           '<p class="total-price right"><span class="right">'+unitPrice+'</span></p>' +
           '<div class="item-in-troll-image">' +
-            '<img src="images/trash.svg" alt="">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg>' +
           '</div>' +
           '<p class="unit-price">Unit price <span class="right" id="unit-price">'+unitPrice+'</span></p>' +
           '<p class="quantity">Quantity: <span class="right">1</span></p>' +
         '</div>';
       $(newElement).appendTo(".item-in-troll-container" );
     }
+    currentTotalAmount = convertRupiahToFloat($('.total-amount').text());
+    totalAmount = countTotalAmount(currentTotalAmount, unitPrice);
+    tax = convertRupiahToFloat(totalAmount) * 0.1
+    tax = convertFloatToRupiah(tax)
+    $('.total-amount').text(totalAmount);
+    $('.tax').text(tax);
   });
-});
+}
 
-function convertRupiahToInt(hargaString){
+function deleteItem(){
+  $(".item-in-troll-container").on('click', '.item-in-troll-image svg', function(){
+    nameFood = $(this).parent().parent().attr('class').split(' ')[1];
+    unitPrice = parseFloat($('.'+nameFood+' .unit-price span').text());
+
+    quantity = parseInt($('.'+nameFood+' .quantity span').text());
+    totalPrice = parseFloat($('.'+nameFood+' .total-price span').text());
+    if (quantity > 1) {
+      quantity--;
+      totalPrice -= unitPrice;
+      $('.'+nameFood+' .quantity span').text(quantity);
+      $('.'+nameFood+' .total-price span').text(totalPrice);
+    } 
+    else{
+      // hapus divnya
+      $('.'+nameFood).remove();
+    }
+    currentTotalAmount = convertRupiahToFloat($('.total-amount').text());
+    totalAmount = countTotalAmount(currentTotalAmount, -Math.abs(unitPrice));
+    tax = convertRupiahToFloat(totalAmount) * 0.1
+    tax = convertFloatToRupiah(tax)
+    $('.total-amount').text(totalAmount);
+    $('.tax').text(tax);
+  });
+}
+
+function convertRupiahToFloat(hargaString){
   hargadislide = hargaString.slice(4);
-  hargaInt = parseInt(hargadislide);
-  return hargaInt;
+  hargaFloat = parseFloat(hargadislide);
+  return hargaFloat;
+}
+function convertFloatToRupiah(number){
+  valueRupiah = "Rp. " + number
+  return valueRupiah;
+}
+function countTotalAmount(currentTotalAmount, unitPrice) {
+  return convertFloatToRupiah(currentTotalAmount + unitPrice);
 }
