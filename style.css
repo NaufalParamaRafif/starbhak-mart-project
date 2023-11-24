@@ -161,8 +161,10 @@ header h4 {
 }
 .food-menu-container button{
   height: 200px;
-  background-color: #0071ba;
+  background-color: white;
   padding: 0px 0px;
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 8px;
 }
 .menu img{
   width: 100%;
