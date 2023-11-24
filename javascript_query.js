@@ -7,6 +7,7 @@ function MenuClicked(){
   $(".menu").click(function(){
     
     nameFood = $("h5", this).text();
+    nameFood = nameFood.replace(" ", "-")
     unitPrice = convertRupiahToFloat($("h6", this).text());
 
     if ($("."+nameFood+"").length) {
@@ -19,7 +20,7 @@ function MenuClicked(){
       
     } else {
       newElement = '<div class="item-in-troll '+nameFood+'">' +
-          '<p class="name-of-food">'+nameFood+'</p>' +
+          '<p class="name-of-food">'+nameFood.replace("-"," ")+'</p>' +
           '<p class="total-price right"><span class="right">'+unitPrice+'</span></p>' +
           '<div class="item-in-troll-image">' +
             '<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg>' +
@@ -29,12 +30,15 @@ function MenuClicked(){
         '</div>';
       $(newElement).appendTo(".item-in-troll-container" );
     }
+
+    // perbaiki apa yang salah di sini
     currentTotalAmount = convertRupiahToFloat($('.total-amount').text());
-    totalAmount = countTotalAmount(currentTotalAmount, unitPrice);
-    tax = convertRupiahToFloat(totalAmount) * 0.1
-    tax = convertFloatToRupiah(tax)
-    $('.total-amount').text(totalAmount);
-    $('.tax').text(tax);
+    currentTax = convertRupiahToFloat($('.tax').text());
+    tax = (unitPrice * 0.1) + currentTax;
+    $('.tax').text(convertFloatToRupiah(tax));
+    
+    totalAmount = currentTotalAmount + unitPrice + tax;
+    $('.total-amount').text(convertFloatToRupiah(totalAmount));
   });
 }
 
@@ -52,15 +56,16 @@ function deleteItem(){
       $('.'+nameFood+' .total-price span').text(totalPrice);
     } 
     else{
-      // hapus divnya
       $('.'+nameFood).remove();
     }
+    // perbaiki apa yang salah di sini
     currentTotalAmount = convertRupiahToFloat($('.total-amount').text());
-    totalAmount = countTotalAmount(currentTotalAmount, -Math.abs(unitPrice));
-    tax = convertRupiahToFloat(totalAmount) * 0.1
-    tax = convertFloatToRupiah(tax)
-    $('.total-amount').text(totalAmount);
-    $('.tax').text(tax);
+    currentTax = convertRupiahToFloat($('.tax').text());
+    tax = currentTax - (unitPrice * 0.1);
+    $('.tax').text(convertFloatToRupiah(tax));
+    
+    totalAmount = currentTotalAmount - unitPrice - currentTax;
+    $('.total-amount').text(convertFloatToRupiah(totalAmount));
   });
 }
 
