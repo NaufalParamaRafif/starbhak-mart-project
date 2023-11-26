@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starbhak Mart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="javascript_query.js"></script>
+</head>
+<body>
+  <div class="header-container">
+    <header>
+      <h4>Starbhak Mart</h4>
+    </header>
+  </div>
+  <div class="main-body-container">
+    <div class="first-column-of-main" id="screen-shoot-element-here">
+      <div class="first-row-of-first-column-of-main">
+        <form class="select-input">
+          <select id="cars" name="cars">
+            <option value="take-away">Take away</option>
+            <option value="dine-in">Dine in</option>
+            <option value="ala-carte">Ala carte</option>
+            <option value="delivery">Delivery</option>
+          </select>
+        </form>
+      </div>
+      <div class="second-row-of-first-column-of-main">
+        <div class="mamang-samele-container">
+          <img src="images/people-logo.png" alt="">
+          <p>Mamang Samele</p>
+        </div>
+      </div>
+      <div class="item-in-troll-container">
+      </div>
+      <div class="total-item">
+        <div class="first-row-of-total-item">
+          <p class="dynamic-text">Discount:</p>
+          <p>-</p>
+        </div>
+        <div class="second-row-of-total-item">
+          <p class="dynamic-text">Tax:</p>
+          <p class="tax">Rp. 0</p>
+        </div>
+        <div class="third-row-of-total-item">
+          <p class="dynamic-text">Total Amount:</p>
+          <p class="total-amount">Rp. 0</p>
+        </div>
+      </div>
+    </div>
+    <div class="second-column-of-main">
+      <div class="item-div-container">
+        <p>Item List</p>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABkElEQVRIS7WUTSsFURjH7y0LCx/i7uStKMVGXcmOUqT4ALKwICkLQikUsbCxsvKyIIqlchcWlKK85hNYWlhYWPj960yduebMnNvMTP06zczzPL/zzJxzioWcr2LO9QsuQQPiKeiCTjOJe8Y72IVv34lFCUZJnoA+R5EKz/fg2EdSLSiTdG0Sbxg34NbcdzPOgmJ+ocd653TZAn2WJyjBDsyZQnZyHTdLsADv0AE/cZ3YgnkC10Az740obtdRl+pEk9j0FRwSOAYjcBqXxLthOIEjGPcV6PO0Qgu8Jgiaef8Cz9DmK1Cwiiv5zVPwQVyjr+CMwCEYhMsEwQDvL+AK+n0FwU+umCQtRdcV/ORVAhZ9BfYyjUtcpqCW6ic0wZevQHFlCDaaOtmCqI2mWC1PLdPYK+qokGQfSo5MzfwcJkGTWDFjZLjvYVdP9qPpRl3pszxAu6mqnT8TZUhzXGuDHVhF1003oaMjjUC1t2HakvzrJK0gUZKFoFoS6iIrQSDRGPrZWQpqWqaOLVD749w7+ANJhEwZIw0PpwAAAABJRU5ErkJggg=="/>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAbklEQVRIS2NkoDFgpLH5DCPLAhNgcE6GBmkpkD5CTPCSEkQbgAb6Qw3dBqS9qW3BJqCBvlBDdwBpT2pbYAM0sB9qaCWQ3kNtC4gxD0MNKXFAcwtGUxHBIB5NRQSDaDQVEQyi0VREMIjIUkDz0hQAP48YGauwbRkAAAAASUVORK5CYII="/>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAvUlEQVQ4T2NkoCJgxGOWClDOBoiPAPEdqDoeIP0Flx58hiUANc0H4kQgXgA1ACQmAMQTsBlIjmEgCwqxGUiuYSCHYRiIz7AAoIb1aN6EicF82QhkNMA45LoMOVI6gYbdABlIrsuQIwUeF6OGMeCLTfqHGSgvJkOjB5Y30bMTehbDG5ugRFiPlPeQDcPmdYJJA9lAig0D2dYPxAVo2QlUapDkTeTSBWTgRSBeABWkyDCQGRJA/AItUpDzJtxyAIOPRxSyef3yAAAAAElFTkSuQmCC"/>
+        <img src="" alt="">
+      </div>
+      <div class="food-menu-container">
+        <button class="menu">
+          <img src="images/kleponcake.png" alt="">
+          <h5>Klepon Cake</h5>
+          <h6>Rp. 36.000,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/lemoncake.png" alt="">
+          <h5>Lemon Cake</h5>
+          <h6>Rp. 36.000,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/chocolover.png" alt="">
+          <h5>Choco Lover</h5>
+          <h6>Rp. 36.000,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/bananamuffin.png" alt="">
+          <h5>Banana Muffin</h5>
+          <h6>Rp. 26.000,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/buttercroissant.png" alt="">
+          <h5>Butter Croissant</h5>
+          <h6>Rp. 24.500,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/cocacola.png" alt="">
+          <h5>Coca Cola</h5>
+          <h6>Rp. 9.500,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/blackcurrent.png" alt="">
+          <h5>Blackcurrant Fizz</h5>
+          <h6>Rp. 14.500,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/mcfloat.png" alt="">
+          <h5>Coke McFloat</h5>
+          <h6>Rp. 15.000,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/milo.png" alt="">
+          <h5>Milo</h5>
+          <h6>Rp. 15.000,00</h6>
+        </button>
+        <button class="menu">
+          <img src="images/fanta.png" alt="">
+          <h5>Fanta</h5>
+          <h6>Rp. 9.500,00</h6>
+        </button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-first-row-container">
+      <div class="print-button-container">
+        <button class="screen-shot-button">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAORJREFUSEvtlT0KAjEQRt8eQhsLQQT/8Agewc7jWIngZTyFhZWlCoKF5d5CCSQik8TZrGZBcLskO/P2+2ZmU5D5KTLnp3HAAlgBowRlB2AOlKEYqeAEjBOSu1evwCwEkYC7jXD7bu0Syf02sAOGQBDyKcDEt4A90A9BUgHSPRffsUp6wBGYSslurVkUA5j9LnATFnttKgGp9fbiNYt+H2AGbw0MIlIuwBLY2vNki6oM3hmY1AVoRY913bO2WpH/AHXQvm5Rla7Rhu+1qzwFpu839s+oJQqdy7lo/sqs89VvY7Jf+g9W8kEZGtIWTAAAAABJRU5ErkJggg=="/>
+          <span>Payment</span>
+          <span>(CTRL + P)</span>
+        </button>
+      </div>
+    </div>
+    <div class="footer-second-row-container">
+      <p>
+        Ready
+      </p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
